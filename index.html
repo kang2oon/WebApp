@@ -7,6 +7,13 @@
 	<title>WebApp</title>
 	<link rel="manifest" href="manifest.json">
 	<script src="pwacompat.min.js"></script>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+				navigator.serviceWorker.register('/service_worker.js');
+			});
+		}
+	</script>
 </head>
 <body>
 	WebApp
